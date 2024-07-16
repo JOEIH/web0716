@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Practice</title>
+</head>
+<body>
+    <h1>강의 1</h1>
+    <a href="#p">문단</a><br>
+    <a href="#style">글씨 스타일</a><br>
+    <a href="#list_table">목록, 표</a><br>
+    <a href="#img">이미지</a><br>
+    <a href="#audio">오디오</a><br>
+    <a href="#video">동영상</a>
+    <hr>
+    <h4 id="p">문단</h4>
+    <p id="p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br>Eaque itaque, saepe impedit aliquam quam quaerat atque, vel, accusantium temporibus amet dolore necessitatibus illum suscipit veritatis in similique est sit voluptatem.</p>
+    <hr>
+    <div>
+        <h4 id="style">글씨 스타일</h4>
+        Style<small>&nbsp;Style</small><br>
+        Style<sup>Style</sup><br>
+        Style<sub>Style</sub><br>
+        <b>Style</b><br>
+        <i>Style</i><br>
+        <ins>Style</ins><br>
+        <del>Style</del>
+    </div>
+    <hr>
+    <h4 id="list_table">목록, 표</h4>
+    <p style="border: solid, black, 1px; width: 100px;">판매상품</p>
+    <ul>
+        <li>사과</li>
+        <li>귤</li>
+        <li>배</li>
+    </ul>
+    <p style="border: solid, black, 1px; width: 100px;">판매순위</p>
+    <ol>
+        <li>귤</li>
+        <li>사과</li>
+        <li>배</li>
+    </ol>
+    <table border="1">
+        <thead>
+            <th></th>
+            <th>사과</th>
+            <th>귤</th>
+            <th>배</th>
+        </thead>
+        <tbody>
+            <tr>
+                <th>개수</th>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <th>가격</th>
+                <td>30000</td>
+                <td colspan="2">20000</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h4 id="img">이미지</h4>
+    <img width="300px" height="auto" src="https://cdn.pixabay.com/photo/2023/03/08/15/23/lake-7838004_1280.jpg" alt="픽사베이 - 자연">
+    <hr>
+    <h4 id="audio">오디오</h4>
+    <audio src="https://ccrma.stanford.edu/~jos/mp3/harpsi-cs.mp3" controls="controls"></audio>
+    <hr>
+    <h4 id="video">동영상</h4>
+    <video width="300px" height="auto" controls="controls">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    </video><br>
+    <iframe width="300px" height="auto" src="https://www.youtube.com/embed/ZwM0H8YGl7A" title="‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <hr>
+    <a href="#p">맨 위로 이동</a>
+    <script src="practice.js"></script>
+</body>
+</html>
