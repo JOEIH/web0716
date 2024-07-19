@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        //event connection
+        window.onload = function() {
+            //문서 객체 선택
+            //let header = document.getElementById('header');
+            let headers = document.querySelectorAll('h1');
+
+            for (let i = 0; i < headers.length; i++) {
+                let header = headers[i]
+
+                header.style.color = 'beige';
+                header.style.background = 'yellowgreen';
+                header.innerHTML = 'From JavaScript'
+            }
+
+            //문서 객체 조작
+            /*header.style.color = 'darkblue';
+            header.style.background = 'aquamarine';
+            header.innerHTML = 'From JavaScript';*/
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="header">Header</h1>
+    <h1 id="header">Header</h1>
+    <h1 id="header">Header</h1>
+</body>
+</html>

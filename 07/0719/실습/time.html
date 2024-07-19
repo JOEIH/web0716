@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="date"></div>
+    <script>
+        let date = new Date();
+
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let day = date.getDate();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+
+        month -= 3;
+        day += 11;
+
+        console.log("year: " + year + "\nmonth: " + month + "\nday: " + day)
+
+        if (month > 12 || day > 31 ){
+            console.log('잘못된 숫자입니다.');
+        } else if (month > 6 && day > 15) {
+            console.log('반년이 지났습니다.\n한 달의 반이 지났습니다.')
+        } else if (month > 6 && day <= 15){
+            console.log('반년이 지났습니다.\n아직 월초입니다.')
+        } else if (month < 6 && day > 15) {
+            console.log('연초입니다.\n한 달의 반이 지났습니다.')
+        } else {
+            console.log('연초입니다.\n아직 월초입니다.')
+        }
+    </script>
+</body>
+</html>
