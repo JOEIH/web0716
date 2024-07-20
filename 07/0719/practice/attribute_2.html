@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        window.onload = function() {
+            //속성 지정 setAttribute
+            document.body.setAttribute('data-custom', 'value');
+
+            //속성 가져오기 getAttribute
+            let dataCustom = document.body.getAttribute('data-custom');
+            alert(dataCustom);
+        }
+        */
+
+        //시계 출력
+        window.onload = function() {
+            //시계가 들어갈 공간
+            let clock = document.getElementById('clock')
+
+            //setInterval(함수, 초)
+            setInterval(function() {
+                //date 객체를 가진 now 선언
+                let now = new Date();
+
+                //clock에 html태그를 반영한 결과를 집어넣음 <- toString()은 now가 가진 date 객체를 문자열로 변환해 주는 것 
+                clock.innerHTML = now.toString();
+            }, 1000); //컴퓨터는 1초를 1000으로 셈, 2초는 2000
+        }
+    </script>
+</head>
+<body>
+    <h1 id="clock"></h1>
+</body>
+</html>

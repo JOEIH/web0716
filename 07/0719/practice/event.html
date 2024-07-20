@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        // 이벤트를 연결합니다. 
+        window.onload = function () { 
+        // 문서 객체를 선택합니다. 
+            let button = document.getElementById('click');
+
+            function() {  //Identifier expected. 이름 필요
+                alert('click'); 
+                // 이벤트를 연결합니다. 
+                button.onclick = function () { 
+	                alert('click'); 
+                }
+            } 
+        }*/
+</script>
+</head>
+<body>
+    <button id="click">버튼</button>
+    <script>
+        //button 가져오기
+        document.getElementById('click').onclick = function() {
+            //button 안에 텍스트 추가
+            this.textContent = this.textContent + '⭐'
+        }
+    </script>
+</body>
+</html>

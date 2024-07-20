@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            let button = document.getElementById('button');
+
+            //클릭하면 링크로 이동하는 이벤트를 false함으로써 제거
+            //눌러도 아무 동작하지 않게 됨
+            button.onclick = function() {
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <!--해당 링크로 이동하는 링크 태그-->
+    <a id="button" href="http://hanbit.co.kr">버튼</a>
+</body>
+</html>

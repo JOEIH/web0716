@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            //h1 모두 선택
+            let headers = document.querySelectorAll('h1')
+
+            for(let i = 0; i < headers.length; i++) {
+                //h1을 첫번째부터 순서대로 선택
+                let header = headers[i]
+
+                //0번째 h1, 1번째 h1, 2번째 h1 순으로 스타일 적용됨
+                header.style.backgroundColor = 'tomato'
+                header.style.color = 'white'
+                header.innerText = 'JavaScript'
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <script>
+        /*
+        let person = {
+            name: 'hyun',
+            age: 24,
+            method: function(food){
+                console.log('오늘 ' +this.name+ '이 먹은 음식은 ' + food +'입니다.')
+            }
+        }
+
+        person.method('삼겹살') 
+        */
+
+
+    </script>
+</body>
+</html>

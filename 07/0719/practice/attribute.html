@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*화면에 이미지 띄우는 방법 1 - js로 body에 이미지, 이미지태그까지 추가
+        window.onload = function() {
+            let output = '<img src="https://images1.privateschoolreview.com/photo/7000/7200/IMG_Academy-8a1hvhmu19c08swgk4skw8sg4-1122.webp" alt="이미지" width=600px height=500px>';
+    
+            document.body.innerHTML = output;
+        }
+        */
+        
+        //방법 2 - 속성 변경하기
+        window.onload = function() {
+            //변수 선언해 이미지 태그 가져오기
+            let image = document.getElementById('image');
+
+            //속성변경 - 이미지 태그에 쓰이는 src 속성, width, height 변경
+            image.src = 'https://images1.privateschoolreview.com/photo/7000/7200/IMG_Academy-8a1hvhmu19c08swgk4skw8sg4-1122.webp'
+            image.width = 400;
+            image.height = 300;
+        }
+    </script>
+</head>
+<body>
+    <img id="image">
+</body>
+</html>

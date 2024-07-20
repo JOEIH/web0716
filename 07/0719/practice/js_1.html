@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <script>
+        /*
+        num1 = 1;
+        num2 = 0;
+
+        result = num1/num2;
+        console.log(result); //infinity
+        */
+
+        /*
+        console.log('자바\t스크립트')
+        console.log('자바\n스크립트')
+        console.log('자바\\\\스크립트')
+        console.log('자바\'\'\'스크립트')
+        console.log('자바\"\"스크립트')
+        */
+
+        /*let pi = 3.141592;;
+        console.log(pi)*/
+
+        /*
+        let time = new Date();
+
+        let date = time.getDate();
+        let hours = time.getHours();
+        let year = time.getFullYear()
+        let month = time.getMonth();
+        let minutes = time.getMinutes();
+        let seconds = time.getSeconds();
+
+        document.querySelector('h1').innerHTML = '현재시간은 ' + hours + ':' + minutes + ':' + seconds + '입니다.'
+        */
+
+        function callTwoTimes(callback) { //매개변수로 callback 전달
+            for(let i=0; i<3; i++) {
+                callback();   //callback 3번
+            }
+        }
+
+        let fun = function() {
+            console.log('함수 호출');
+        }
+        callTwoTimes(fun); //'함수 호출'을 출력하는 fun 함수를 callTwoTimes가 매개변수로 입력받음 -> '함수 호출'
+    </script>
+</body>
+</html>
