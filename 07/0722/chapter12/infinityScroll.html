@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            //무한스크롤이 안 되는 것 같음...다시
+            //무한스크롤에서는 되도록이면 맨 위로 가는 기능 만들어줘야함
+            let appendDocument = function() {
+                for (let i = 0; i<20; i++) {
+                    $('<h1>Infinity Scroll</h1>').appendTo('body');
+                }
+            }
+            appendDocument();
+
+            $(window).scroll(function() {
+                let scrollHeight = $(window).scrollTop() + $(window).height();
+                let documentHeight = $(document).height();
+
+                // 예제에서는 scrollHeight == documentHeight로 했었는데 마지막까지 로드된 후에 scrollHeight랑 documentHeight가 같지 않은 경우가 있어서 아래 코드로 수정했더니 해결!
+                if (scrollHeight > documentHeight - 1) {
+                    appendDocument();
+                }
+            })
+        })
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

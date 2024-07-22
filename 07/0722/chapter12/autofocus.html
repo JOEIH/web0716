@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            //input 태그 고르고 index값으로 변수 설정
+            let input_1 = document.querySelectorAll('input')[0];
+            let input_2 = document.querySelectorAll('input')[1];
+
+            //input_1 누를 때 함수
+            input_1.onkeydown = function() {
+                //input_1이 가진 값의 길이가 6 이상이 되면 input_2로 포커스 옮기도록 함
+                if (input_1.value.length >= 6) {
+                    input_2.focus();
+                }
+            }
+
+            //input_2 누를 때 함수(이벤트)
+            input_2.onkeydown = function(event) {
+                //이벤트 객체 추출 -> 인터넷 익스플로러는 e구문을 이해하지 못해서 window.event 구문을 같이 적어주는 것
+                // ||는 앞의 값이 있으면 앞의 값을 선언하고 없을 경우 뒤의 값을 선언함
+                // 익스플로러는 앞 구문을 모르기 때문에 window.event를 사용하게 됨
+                event = event || window.event;
+                //만약 백스페이스(keycode 8) 누르고, 동시에 input_2의 길이가 0이면 input_1로 포커스 이동
+                if (event.keyCode == 8 && input_2.value.length == 0) {
+                    input_1.focus();
+                }
+            }
+        })
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" maxlength="6">
+    <!--span이 inline이기 때문에 사용-->
+    <span>-</span> 
+    <input type="text" maxlength="7">
+</body>
+</html>

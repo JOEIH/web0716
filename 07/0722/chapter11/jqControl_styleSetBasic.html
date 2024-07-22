@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.box').css('float', 'left');
+            $('.box').css('width', '100');
+            $('.box').css('height', '100');
+            /*마진 적용 왜 안되지 -> '' 빼니까 적용됨 왜?*/
+            //해결 -> 노션에 정리함
+            $('.box').css('margin', '10px');
+
+            $('.box1').css('backgroundColor', 'green');
+            $('.box2').css('backgroundColor', 'tomato');
+            $('.box3').css('backgroundColor', 'blue');
+
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+</body>
+</html>

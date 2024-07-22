@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('button').click(function () {
+                //normal, fast, slow 적절히 사용하기
+                $('.page').fadeToggle('fast');
+            })
+        })
+    </script>
+    <style>
+        button{
+            border-style: none;
+            background: yellowgreen;
+            width: 100px;
+            height: 40px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: skyblue;
+            color: white;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <button>Toggle Show</button>
+    <div class="page">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut enim excepturi ea natus consectetur in. Voluptatibus, itaque? Autem, accusamus omnis, sequi voluptatum esse tenetur voluptas harum corrupti porro illo maiores.</p>
+    </div>
+</body>
+</html>

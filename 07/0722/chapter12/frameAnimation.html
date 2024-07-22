@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        window.onload = function() {
+            let count = 0;
+            //getElementById('#image')로 해서 결과 안 나왔던 것^^..
+            let image = document.getElementById('image');
+            let frames = ['img/0.png', 'img/1.png', 'img/2.png','img/3.png', 'img/4.png', 'img/5.png', 'img/6.png', 'img/7.png', 'img/8.png', 'img/9.png', 'img/10.png', 'img/11.png', 'img/12.png', 'img/13.png', 'img/14.png'];
+
+            setInterval(function() {
+                image.src = frames[count % frames.length];
+                count += 1;
+            }, 1000/20);
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <img id="image">
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('a').click(function(event) {
+                //경고창으로 click 출력
+                alert('click');
+                //기본(default) 이벤트 제거 -> a 누르면 링크 이동하는 이벤트를 제거한 것
+                event.preventDefault();
+            })
+        })
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://github.com/JOEIH">JOEIH의 깃허브</a>
+</body>
+</html>

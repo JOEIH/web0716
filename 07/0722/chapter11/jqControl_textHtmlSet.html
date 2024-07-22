@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function() {
+            //텍스트 변경
+            $('h1:nth-child(1)').text('<a href ="#">text()</a>');
+            //html 태그까지 변경
+            $('h1:nth-child(2)').html('<a href ="#">html()</a>');
+            //css 적용 안되는 이유...
+            //$('h1').css('text-decoration', 'none'); 원래 이렇게 작성했어서 적용이 안 됐다. 
+            //a 태그에 적용하니 잘 동작한다!
+            $('a').css('text-decoration', 'none');
+
+            /*
+            let text = $('h1').text();
+            let html = $('h1').html();
+            //팝업으로 오류나 이벤트 확인 가능
+            alert('text: ' + text);
+            alert('html: ' + html);
+            */
+        })
+    </script>
+</head>
+<body>
+    <h1>Header - 0</h1>
+    <h1>Header - 1</h1>
+</body>
+</html>

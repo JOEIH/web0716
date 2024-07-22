@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            //두가지 함수
+            $('#box').hover(function () {
+                //#box 에 .hover 클래스 추가
+                $('#box').addClass('hover');
+            }, function() {
+                //#box 벗어나면 다시 .hover 삭제
+                $('#box').removeClass('hover');
+            })
+        })
+    </script>
+    <style>
+        #box {
+            background: rgb(103, 158, 21);
+            width: 100px;
+            height: 100px;
+        }
+        #box.hover {
+            background: skyblue;
+            border-radius: 25px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

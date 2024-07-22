@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function () {
+            /* 위아래 같은 내용
+            $('#box').css({
+                width: 100,
+                height:100,
+                background:'skyblue'
+            }).on('click', function() {
+                $(this).css('background', 'tomato');
+            }).on('mouseenter', function() {
+                $(this).css('background', 'purple');
+            }).on('mouseleave', function() {
+                $(this).css('background', 'skyblue');
+            })
+            */
+            //메서드 체이닝 가능한 이유: this를 반환값으로 넘겨줘서
+            // jQuery 메서드(.css) 실행 후 반환되는 객체는 jQuery객체
+            // this = jQuery 객체라고 보면 됨
+            $('#box').css({
+                width: 100,
+                height:100,
+                background:'skyblue'
+            }).on({
+                click: function() {
+                    $(this).css('background', 'tomato');
+                }, 'mouseenter': function() {
+                    $(this).css('background', 'purple');
+                }, 'mouseleave': function() {
+                    $(this).css('background', 'skyblue');
+                }
+            })
+        })
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

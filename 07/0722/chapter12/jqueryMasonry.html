@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script src= "https://masonry.desandro.com/masonry.pkgd.min.js"></script> 
+    <script>
+        $(document).ready(function () {
+            for(let i = 0; i < 100; i++) {
+                $('<div></div>').addClass('box').css({
+                    width: 110,
+                    //margin 줘야 상자끼리 분리되어 보임
+                    margin: 5,
+                    height: Math.floor(Math.random() * 100) + 50,
+                    //오른쪽 입력할 때 ''빼먹지 말기
+                    backgroundColor: 'skyblue',
+                    borderRadius: 7
+                }).appendTo('body');
+            }
+            $('body').masonry({
+                columnWidth: 120
+            })
+        })
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
