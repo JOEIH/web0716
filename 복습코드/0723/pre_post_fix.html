@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrefixPostfix</title>
+</head>
+<body>
+    <script>
+        let number = 10;
+
+        console.log(number++); //출력 후 +1해서 number는 11이 됨
+        console.log(++number); //11이 된 number에 +1 해서 출력했기 때문에 number는 12
+
+        //반복문에서의 증감연산자
+        for(let i = 0; i < 5; i++) {
+            console.log(i) // 0 1 2 3 4 5 출력
+            //i = 0    증가시키기 이전 값인 0 출력 + 1
+            //i = 1    1 출력 + 1
+            //i = 2    2 출력 + 1
+            //i = 3    3 출력 + 1
+            //i = 4    4 출력 + 1 -> i < 5 이므로 실행 종료
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // a부터 b까지 더하기
+        // a와 b를 매개변수로
+        function sumAll(a, b) {
+            //결과값을 넣어줄 변수 선언
+            let sum = 0;
+
+            //a부터 b까지의 수를 더하는 것이기 때문에 i = a로 선언
+            for(let i = a; i <= b; i++) {
+                //a부터 b까지의 수를 sum에 더함
+                sum += i
+            }
+            //sum을 반환
+            return sum
+        }
+
+        console.log(sumAll(11, 13));
+
+
+        //최솟값구하기
+        //배열 선언
+        function min(array) {
+            //값 저장할 변수 선언
+            let num = array[0];
+            //배열의 첫번째 인덱스부터 비교 시작
+            for (let i = 0; i<array.length; i++){
+                //num과 비교했을 때 인덱스의 값이 더 작다면 그 값을 num에 넣음
+                if(num > array[i]){
+                    num = array[i]
+                }
+            }
+            //for문이 다 돌아가고 나온 값이 필요하므로 반환식은 여기에다 작성
+            return num
+        }
+
+        const arr = [4, 5, 7, 11, 3, -3];
+        console.log(min(arr));
+
+        //최대값 구하기
+        function max(array) {
+            //값 저장할 변수 선언
+            let num = array[0];
+            //배열의 첫번째 인덱스부터 비교 시작
+            for (let i = 0; i<array.length; i++){
+                //num과 비교했을 때 인덱스의 값이 더 작다면 그 값을 num에 넣음
+                if(num < array[i]){
+                    num = array[i]
+                }
+            }
+            //for문이 다 돌아가고 나온 값이 필요하므로 반환식은 여기에다 작성
+            return num
+        }
+
+        console.log(max(arr));
+
+    </script>
+</body>
+</html>

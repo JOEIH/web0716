@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeCasting</title>
+</head>
+<body>
+    <script>
+        //숫자 자료형으로 변환하기
+        //Number()
+        const n = '12';
+        const str = 'char';
+
+        console.log(typeof(n));           //string
+        console.log(typeof(Number(n)));   //number
+
+        console.log(typeof(Number(str))); //number
+        console.log(Number(str))          //NaN
+        // 자료형은 number로 나오지만 숫자처럼 계산할 수 없음
+        // NaN - 숫자지만 숫자로 나타낼 수 없는 숫자
+        // 즉, NaN이라서 typeof를 했을 때 number로 출력됨
+        
+        console.log(Number(str) + Number(12))  // NaN 
+
+        //문자열 자료형으로 변환하기
+        //String()
+        const num = 12;
+        const bool = false;
+
+        console.log(typeof(num));           //number
+        console.log(typeof(String(num)));   //string
+        console.log(typeof(bool));          //boolean
+        console.log(typeof(String(bool)));  //string
+
+
+        //연산자로 숫자 자료형, 문자 자료형으로 변환하기
+        const k = 11;
+        const r = '3';
+        const p = 1
+        const o = true     //true는 불리언으로 1값을 가짐
+
+        console.log(k+r);             //113
+        console.log(typeof(k+r));     //string
+
+        console.log(p+o);             //2
+        console.log(typeof(p+o));     //number
+
+        
+    </script>
+</body>
+</html>

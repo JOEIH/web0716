@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>별</h1>
+    <script>
+        //별 6
+        for (let i = 0; i < 5; i++) {
+            //왼쪽 공백 1~4줄
+            for (let j = 1; j < 5 - i; j++) {
+                document.write('&nbsp;');
+            }
+
+            for (let k = 0; k <= i ; k++) {
+                document.write('*');
+            }
+            document.write('<br>');
+        }
+
+        document.write('<br>')
+        
+        //별7
+        for (let i = 0; i < 5; i++) {
+            //왼쪽 공백 1~4줄
+            for (let j = 0; j < i ; j++) {
+                document.write('&nbsp;');
+            }
+
+            for (let k = 0; k < 5 - i ; k++) {
+                document.write('*');
+            }
+            document.write('<br>');
+        }
+
+        document.write('<br>')
+        
+        //별8
+        //오른쪽 공백은 생각할 필요 없음
+        for (let i = 0; i < 5; i++) {
+            for(let j = 1; j < 5 - i; j++) {
+                document.write('&nbsp;')
+            }
+
+            for(let k = 0; k < 2*i+1; k++) {
+                document.write('*');
+            }
+            document.write('<br>');
+        }
+
+        document.write('<br>');
+
+        //별9
+        //마찬가지로 오른쪽 공백 생각하지 않음
+        for (let i = 0; i < 5; i++) {
+            for(let j = 0; j < i; j++) {
+                document.write('&nbsp;');
+            }
+
+            for(let k = 0; k < 10 - (2*i+1); k++) {
+                document.write('*');
+            }
+            document.write('<br>');
+        }
+
+        document.write('<br>');
+
+        //별10 - 마름모
+        //윗부분 5줄 먼저 출력
+        for (let i = 0; i<5; i++) {
+            //위쪽 삼각형 공백
+            for(let j = 0; j < 5 - i; j--) {
+                document.write('&nbsp');
+            }
+            //위쪽 삼각형 별
+            for(let k = 0; k < 2*i + 1; k++) {
+                document.write('*');
+            } 
+            document.write('<br>')
+        }
+        //아랫부분 4줄
+        for (let i = 0; i< 4; i++) {
+            //아래쪽 삼각형 공백
+            for(let j = 0; j < i; j++) {
+                document.write('&nbsp');
+            }
+            //아래쪽 삼각형 별
+            for(let k = 0; k < 2*i+1; k--) {
+                document.write('*');
+            } 
+            document.write('<br>')
+        }
+
+        document.write('<br>')
+
+        //모래시계
+        //윗부분 5줄
+        for (let i=0; i < 5; i++) {
+            for (let k = 0; k < i; k++) {
+                document.write('&nbsp');
+            }
+            for (let j = 0; j < 2*i+1; j--) {
+                document.write('*');
+            }
+            document.write('<br>')
+        }
+        //아랫부분 4줄
+        for (let i=0; i < 4; i++) {
+            for (let k = 0; k < i+1; k--) {
+                document.write('&nbsp');
+            }
+            for (let j = 0; j < 2*i+3; j++) {
+                document.write('*');
+            }
+            document.write('<br>')
+        }
+    </script>
+</body>
+</html>

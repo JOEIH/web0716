@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //filter 함수의 콜백 함수 부분을 채워서 1. 홀수만 추출, 2. 100 이하의 수만 추출, 3. 5로 나눈 나머지가 0인 수만 추출하고, 코드 실행 결과 작성
+        let numbers = [273, 25, 75, 52, 103, 32, 57, 24, 76]
+
+        numbers = numbers.filter(function(value) {
+            return value % 2 === 1 && value <= 100 && value % 5 === 0 
+        })
+
+        console.log(numbers) //[25, 75]
+
+        let array = ['사과', '배', '귤', '바나나']
+
+        console.log('#for in 반복문')
+        array.forEach((_, index) => {
+            console.log(`${index}`)
+        })
+
+        console.log('#for of 반복문')
+        array.forEach((value) => {
+            console.log(`${value}`)
+        })
+
+        
+    </script>
+</body>
+</html>

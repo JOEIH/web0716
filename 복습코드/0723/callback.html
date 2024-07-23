@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //콜백함수 - 선언적 함수 사용
+        function callThreeTimes(callback) {
+            for(let i = 0; i< 3; i++) {
+                //callback 매개변수가 함수이므로 호출 가능
+                callback(i)  
+            }
+        }
+
+        //i를 매개변수로 갖는 print() 함수
+        function print(i) {
+            console.log(i + '번째 함수 호출')
+        }
+
+        //print() 함수를 callThreeTimes의 매개변수로 전달
+        console.log(callThreeTimes(print))
+
+
+        //콜백함수 - 익명 함수 사용
+        //매개변수 앞에 함수 이름이 없으므로 익명 함수
+        callThreeTimes(function(i) {
+            console.log(i + '번째 함수 호출')
+        })
+
+        //콜백함수 사용하는 forEach() 함수
+        let numbers = [273, 52, 103, 32, 57];
+
+        //매개변수로 전달되는 함수가 콜백함수
+        //forEach()는 value, index, array를 매개변수로 갖는 함수를 전달받음
+        numbers.forEach(function(value, index, array) {
+            console.log(`${index}번째 요소: ${value}`)
+        })
+
+        //콜백함수 사용하는 map() 함수
+        //리턴한 값들을 기반으로 새로운 배열 생성함
+        //제곱된 값을 가진 배열이 새롭게 생성됨
+        //[74529, 2704, 10609, 1024, 3249]
+        numbers2 = numbers.map(function(value, index, array) {
+            //numbers의 값이 제곱되어 반환
+            return value * value
+        })
+
+        //numbers2 = [74529, 2704, 10609, 1024, 3249]
+        //forEach는 value, index, array를 매개변수로 갖기 때문에 각 인덱스마다 값을 출력
+        //array에는 모든 값이 제곱되어 들어가 있음
+        numbers2.forEach(console.log)
+
+        //74529, 0, [74529, 2704, 10609, 1024, 3249]
+        //2704, 1, [74529, 2704, 10609, 1024, 3249]
+        //...
+
+
+        //콜백함수 활용하는 filter() 함수
+        //콜백함수에서 리턴하는 값이 true인 것들만 모아서 새로운 배열 생성
+        const arr = [0,1,2,3,4,5]
+        const evenNumbers = arr.filter(function(value) {
+            //배열에서 짝수인 것만 모아서 배열을 생성
+            //[0,2,4]
+            return value % 2 === 0
+        })
+
+        console.log(`원래 배열: ${arr}`)
+        console.log(`짝수만 추출: ${evenNumbers}`)
+        
+
+
+    </script>
+</body>
+</html>
