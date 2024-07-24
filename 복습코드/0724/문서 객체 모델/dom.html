@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //텍스트가 h1로 출력됨
+        const h1 = (text) => `<h1>${text}</h1>`
+    </script>
+    <script>
+        //body에 <h1>1번째 script 태그</h1> 넣음(body 태그 생성 이전)
+        document.body.innerHTML += h1('1번째 script 태그')
+        /*
+        //DOMContentLoaded 이벤트를 사용하면 브라우저가 문서 객체를 모두 읽고 나서 실행 가능하기 때문에 마지막 줄에 1번째 script 태그가 출력됨
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.innerHTML += h1('1번째 script 태그')
+        })
+        */
+    </script>
+</head>
+<body>
+    <script>
+        //body태그 생성하고 읽기 시작 -> <h1>2번째 script 태그</h1> 출력
+        //대부분의 브라우저는 body가 구문 분석 중일 때 body태그 앞에서 html을 직접 수정하는 것을 허용하지 않기 때문에 body가 끝날 때까지 head태그의 구문은 실행되지 않음
+        //즉 실행 순서와 브라우저의 영향으로 head태그 안의 구문은 출력되지 않는 것
+        document.body.innerHTML += h1('2번째 script 태그')
+    </script>
+    <h1>1번째 h1태그</h1>
+    <script>
+        document.body.innerHTML += h1('3번째 script 태그')
+    </script>
+    <h1>2번째 h1태그</h1>
+</body>
+</html>

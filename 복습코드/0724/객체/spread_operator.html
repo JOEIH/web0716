@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        //얕은 복사
+        const 구름 = { 
+            이름: '구름', 
+            나이: 6, 
+            종족: '강아지' 
+        } 
+
+        const 별 = 구름          
+        별.이름 = '별'
+        별.나이 = 1
+
+        console.log(JSON.stringify(구름))   
+        //{"이름":"별","나이":1,"종족":"강아지"}
+        console.log(JSON.stringify(별))
+        //{"이름":"별","나이":1,"종족":"강아지"}
+        */
+
+
+
+        //전개 연산자 사용한 깊은 복사
+        const 구름 = { 
+            이름: '구름', 
+            나이: 6, 
+            종족: '강아지' 
+        } 
+
+        const 달 = {...구름}
+        달.이름 = '달'
+        달.나이 = 3
+
+        console.log(JSON.stringify(구름))  
+        //{"이름":"구름","나이":6,"종족":"강아지"}
+        console.log(JSON.stringify(달))
+        //{"이름":"달","나이":3,"종족":"강아지"}
+        //전개 연산자 사용해서 독립적으로 동작하게 되었기 때문에 결과가 달라짐
+
+
+
+        //전개 연산자 사용한 객체 추가
+        const 사과 = {
+            이름: '사과',
+            가격: 18000,
+            개수: 4,
+        }
+
+        const 사과상자 = {
+            //객체 사과를 깊은 복사 -> 독립적으로 작동
+            //이름, 가격이 기존 속성 덮어씀
+            ...사과,         
+            이름: '사과상자',
+            가격: 50000,
+            개수: 3,
+            예약: 5
+        }
+
+        console.log(JSON.stringify(사과))
+        //{"이름":"사과","가격":18000,"개수":4}
+        console.log(JSON.stringify(사과상자))
+        //{"이름":"사과상자","가격":50000,"개수":3,"예약":5}
+        //덮어쓴 결과
+
+
+        //전개 순서
+        const 귤 = {
+            이름: '귤',
+            가격: 18000,
+            개수: 4,
+        }
+
+        const 귤상자 = {       
+            //먼저 있던 속성을 
+            이름: '귤상자',
+            가격: 50000,
+            개수: 3,
+            예약: 5,
+            //전개 부분이 덮어씀
+            ...귤
+        }
+
+        console.log(JSON.stringify(귤))
+        //{"이름":"귤","가격":18000,"개수":4}
+        console.log(JSON.stringify(귤상자))
+        //{"이름":"귤","가격":18000,"개수":4,"예약":5}
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

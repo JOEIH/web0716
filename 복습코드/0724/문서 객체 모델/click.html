@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            //이벤트 연결 버튼 누르면 클릭횟수 올라가고 p태그 연결 상태
+            //이벤트 연결 해제 버튼 누르면 클릭해도 횟수 안 올라가도록 하고 p태그 해제 상태
+
+            const h1 = document.querySelector('h1')
+            const connectBtn = document.querySelector('#connect')
+            const disconnectBtn = document.querySelector('#disconnect')
+            const p = document.querySelector('p')
+
+            let counter = 0
+            let isConnect = false
+
+            //h1누르면 클릭횟수 증가 반복해서 사용할 함수
+            //이벤트가 들어가면 함수 실행
+            const listener = (event) => {
+                h1.textContent = `클릭 횟수: ${counter++}`
+            }
+
+            //이벤트 연결 버튼
+            connectBtn.addEventListener('click', () => {
+                if(isConnect === false) {
+                    isConnect = true
+                    p.textContent = '이벤트 연결 상태: 연결'
+                    //click은 마우스 이벤트
+                    h1.addEventListener('click', listener)
+                }
+            })
+
+            //이벤트 제거 버튼
+            disconnectBtn.addEventListener('click', () => {
+                if(isConnect === true) {
+                    isConnect = false
+                    p.textContent = '이벤트 연결 상태: 해제'
+                    h1.removeEventListener('click', listener)
+                }
+            })
+        })
+    </script>
+    <style>
+        h1 {
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>클릭 횟수: 0</h1>
+    <button id="connect">이벤트 연결</button>
+    <button id="disconnect">이벤트 제거</button>
+    <p>이벤트 연결 상태: 해제</p>
+</body>
+</html>
