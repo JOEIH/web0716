@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //power메소드 추가
+        Number.prototype.power = function(n=2) {
+            return this.valueOf()**n
+        }
+
+        //Number객체의 power메소드 사용
+        const a = 12
+        console.log('a.power():', a.power())      //a.power(): 144
+        console.log('a.power(3):', a.power(3))    //a.power(3): 1728
+        console.log('a.power(4):', a.power(4))    //a.power(4): 20736
+
+        String.prototype.contain = function(data) {
+            return this.indexOf(data) >= 0
+        }
+
+        Array.prototype.contain = function(data) {
+            return this.indexOf(data) >= 0
+        }
+
+        const b = '안녕하세요';
+        console.log('안녕 in 안녕하세요:', b.contain('안녕'))           //true
+        console.log('없는데 in 안녕하세요:', b.contain('없는데'))       //false
+
+        const c = [273, 32, 103, 57, 52] 
+        console.log('273 in [273, 32, 103, 57, 52]:', c.contain(273))   //true
+        console.log('0 in [273, 32, 103, 57, 52]:', c.contain(0))       //false
+    </script>
+</body>
+</html>

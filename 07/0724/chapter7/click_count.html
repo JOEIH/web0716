@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let counter = 0
+            const h1 = document.querySelector('h1')
+
+            h1.addEventListener('click', (event) => {
+                counter++
+                h1.textContent = `클릭 횟수: ${counter}`
+            })
+        })
+    </script>
+    <style>
+        h1{
+            /*클릭 여러 번 했을 때 글자 선택되는 것을 막기 위함*/
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <!--h1 클릭할 때마다 클릿 횟수 출력-->
+    <h1>클릭 횟수: 0</h1>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //뇌 빼고 침 처음부터 다시... 
+        document.addEventListener('DOMContentLoaded', () => {
+            let counter = 0
+            let isConnect = false
+
+            const h1 = document.querySelector('h1')
+            const p = document.querySelector('p')
+            const connectBtn = document.querySelector('#connect')
+            const disconnectBtn = document.querySelector('#disconnect')
+
+            const listener = (event) => {
+                h1.textContent = `클릭 횟수: ${counter++}`
+            }
+
+            connectBtn.addEventListener('click', () => {
+                if(isConnect === false) {
+                    h1.addEventListener('click', listener)
+                    p.textContent = '이벤트 연결 상태: 연결'
+                    isConnect = true
+                }
+            })
+
+            disconnectBtn.addEventListener('click', () => {
+                if (isConnect === true) {
+                    h1.removeEventListener('click', listener) 
+                    p.textContent = '이벤트 연결 상태: 해제'
+                    isConnect = false
+                }
+            })
+        })
+    </script>
+    <style>
+        h1 {
+            /*여러번 클릭했을 때 글자 선택되는 것 막기 위함*/
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>클릭 횟수: 0</h1>
+    <button id="connect">이벤트 연결</button>
+    <button id="disconnect">이벤트 제거</button>
+    <p>이벤트 연결 상태: 해제</p>
+</body>
+</html>

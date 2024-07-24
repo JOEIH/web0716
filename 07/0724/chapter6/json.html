@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    const data = [{
+        name: '혼자 공부하는 파이썬',
+        price: 18000,
+        publisher: '한빛미디어'
+        }, {
+        name: 'HTML5 웹 프로그래밍 입문',
+        price: 26000,
+        publisher: '한빛아카데미'
+        }]
+            
+        console.log(JSON.stringify(data))
+        //들여쓰기 없음
+        console.log(JSON.stringify(data, null, 2))  
+        //2번째 매개변수는 객체에서 어떤 속성만 추출하고 싶을 때 사용하지만 거의 사용하지 않고 보통 null을 넣음
+        //들여쓰기 2칸
+
+        const json = JSON.stringify(data)
+        console.log(JSON.parse(json))
+        //다시 자바스크립트 객체(배열)로 만들기
+        
+    </script>
+</body>
+</html>
