@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inchInput = document.querySelector('#inchInput')
+            const inchBtn = document.querySelector('#inchBtn')
+            const inchP = document.querySelector('#inchP')
+
+            //연결된 변수 잘 확인하기
+            inchBtn.addEventListener('click', () => {
+                const inch = Number(inchInput.value)
+
+                if(isNaN(inch)) {
+                    inchP.textContent = '숫자 입력해주세요'
+                    return
+                }
+                const cm = inch * 2.54
+                inchP.textContent = `${cm} cm`
+            })
+
+            const celciusInput = document.querySelector('#celciusInput')
+            const celciusBtn = document.querySelector('#celciusBtn')
+            const celciusP = document.querySelector('#celciusP')
+
+            celciusBtn.addEventListener('click', () => {
+                const celcius = Number(celciusInput.value)
+
+                if(isNaN(celcius)) {
+                    celciusP.textContent = '숫자 입력해주세요'
+                    return
+                }
+                const fahrenheit = (celcius * 9/5) + 32
+                celciusP.textContent = `${fahrenheit} °F`
+            })
+        })
+    </script>
+</head>
+<body>
+    <input id="inchInput" type="text"> inch
+    <br>
+    <button id="inchBtn">계산</button>
+    <p id="inchP"></p>
+    <br>
+    <input id="celciusInput" type="text"> Celcius
+    <br>
+    <button id="celciusBtn">계산</button>
+    <p id="celciusP"></p>
+</body>
+</html>

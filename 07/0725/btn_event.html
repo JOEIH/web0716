@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.querySelector('#click')
+
+            btn.addEventListener('click', () => {
+                const p = document.createElement('p')
+                /* 이 순서로 두면 안 돌아감
+                //appendChild때문 -> '이벤트 추가'라는 텍스트가 포함된 p 태그를 appendChild해줘야 화면에 나타남
+                
+                document.body.appendChild('p')
+                p.textContent = '이벤트 추가'
+                */
+                
+                p.textContent = '이벤트 추가'
+                document.body.appendChild(p)
+            })
+            
+        })
+    </script>
+</head>
+<body>
+    <button id="click">이벤트 추가</button>
+</body>
+</html>
