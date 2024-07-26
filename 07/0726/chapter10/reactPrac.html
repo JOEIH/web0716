@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+        }
+        div {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        h1 {
+            background-color:lightsalmon;
+            padding: 5px;
+            color: white;
+            margin: 20px;
+            width: 300px;
+            font-style:oblique;
+            border-style: dashed;
+            line-height: 38.5px;
+        }
+        img {
+            box-shadow: 0px 0px 7px black;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div> <!--div#root-->
+    <!-- 리액트를 사용하는 코드 입력 -->
+    <script type="text/babel">   //뼈대 만들기
+        const name = '구름'
+        //이미지 링크를 직접 수정하면 에러가 뜸
+        const imgUrl = 'https://i.pinimg.com/736x/44/2f/30/442f301c5afe448ce1c479ce96cca4ff.jpg'
+
+        //컴포넌트, 컨테이너 생성
+        const component = <div>
+            <h1>{name}님 안녕하세요!</h1>
+            <img width='300' height='400' src = {imgUrl}/>
+        </div>
+        const container = document.getElementById('root')
+
+        ReactDOM.render(component,container)
+    </script>
+</body>
+</html>
