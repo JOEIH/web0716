@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const select = document.querySelector('select')
+            const p = document.querySelector('p')
+
+            select.addEventListener('change', (event) => {
+                //이벤트를 가지고 있는 부모 요소 select의 options
+                const options = event.currentTarget.options
+                const list = []
+                
+                for (const option of options) {
+                    if(option.selected) {
+                        list.push(option.textContent) 
+                    }
+                }
+                p.textContent = `선택: ${list.join(', ')}`
+                //shift + 클릭해야 중복선택됨
+            })
+        })
+    </script>
+</head>
+<body>
+    <select multiple>
+        <option>하나</option>
+        <option>둘</option>
+        <option>셋</option>
+        <option>넷</option>
+    </select>
+    <p></p>
+</body>
+</html>
