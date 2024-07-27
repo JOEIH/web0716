@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const p = document.createElement('p')
+            const first = document.getElementById('first')
+            const second = document.getElementById('second')
+
+            const isIn = true;
+
+            p.textContent = '문서 객체 이동';
+
+            //번갈아 실행하는 함수
+            //첫 div에 p 추가하고, 3초가 지나면 두번째 div에 p 추가
+            const moveFirst = () => {
+                first.appendChild(p)
+                setTimeout(moveSecond, 3000)
+            }
+
+            //두번째 div에 p 추가된 후 5초가 지나면 다시 첫번째 div에 p 추가
+            const moveSecond = () => {
+                second.appendChild(p)
+                setTimeout(moveFirst, 5000)
+            }
+
+            moveFirst();
+        })
+    </script>
+</head>
+<body>
+    <div id="first">
+        <h1>첫 번째 div</h1>
+    </div>
+    <hr>
+    <div id="second">
+        <h1>두 번째 div</h1>
+    </div>
+</body>
+</html>
