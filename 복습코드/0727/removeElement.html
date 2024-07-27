@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.getElementById('header')
+            const h1 = document.createElement('h1')
+
+            h1.textContent = '문자'
+            h1.style.textAlign = 'center'
+            h1.style.backgroundColor = 'yellowgreen'
+            h1.style.color = 'white'
+
+            //3초 뒤 나타나고 3초 뒤 삭제
+            const appear = () => {
+                header.appendChild(h1)
+                setTimeout(remove, 3000)
+            }
+
+            const remove = () => {
+                header.removeChild(h1)
+                setTimeout(appear, 5000)
+            }
+
+            appear();
+
+        })
+    </script>
+</head>
+<body>
+    <hr>
+    <header id="header"></header>
+    <hr>
+</body>
+</html>
