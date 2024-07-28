@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const h1 = document.querySelector('h1');
+            const connectBtn = document.getElementById('connect')
+            const disconnectBtn = document.getElementById('disConnect')
+            const p = document.querySelector('p')
+
+            let counter = 0;
+            let isConnect = false;
+
+            //이벤트 제거하려면 이벤트 리스너 변수나 상수로 가지고 있어야!
+            const click = (event) => {
+                h1.textContent = `클릭 횟수: ${1 + counter++}`
+            }
+        
+            
+            connectBtn.addEventListener('click', ()=>{
+                if(isConnect === false) {
+                    h1.addEventListener('click', click)
+                    p.textContent = '이벤트 연결상태: 연결'
+                    isConnect = true
+                }
+            })
+
+            disconnectBtn.addEventListener('click', () => {
+                if(isConnect === true) {
+                    h1.removeEventListener('click', click)
+                    p.textContent = '이벤트 연결상태: 해제'
+                    h1.textContent = `클릭 횟수: ${counter = 0}`
+                    isConnect = false
+                    
+                }
+            })
+        })
+    </script>
+    <style>
+        h1 {
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>클릭 횟수: </h1>
+    <button id="connect">활성화</button>
+    <button id="disConnect">비활성화</button>
+    <p>이벤트 연결상태: 해제</p>
+</body>
+</html>

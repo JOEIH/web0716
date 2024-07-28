@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const textInput = document.querySelector('input')
+            const button = document.querySelector('button')
+            const p = document.querySelector('p')
+
+            let cm;
+
+            const btn = () => {
+                //&&으로 입력하면 동작안함!!!!!
+                if(textInput.value == '' || isNaN(textInput.value)) {
+                    p.textContent = '숫자를 입력하세요.'
+                } else {
+                    cm = textInput.value*2.54
+                    p.textContent = `${cm}cm`
+                }
+            }
+
+            button.addEventListener('click', btn)
+
+            //enter키 누르면 똑같이 동작하도록 하기 위해 단위 변환 함수 지정
+            textInput.addEventListener('keydown', (event) => {
+                if (window.event.keyCode == 13) {
+                    btn()
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="text">
+    <span>inch</span><br>
+    <br>
+    <button>계산</button>
+    <p></p>
+</body>
+</html>

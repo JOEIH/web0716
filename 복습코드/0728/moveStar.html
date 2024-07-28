@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const star = document.querySelector('h1');
+            //별 위치 조정 위해 absolute로 설정
+            star.style.position = 'absolute'
+            star.style.margin = '0'
+
+            //첫 좌표는 0,0으로
+            let [x, y] = [0,0];
+            const block = 20;
+
+            //별 위치 출력
+            const print = () => {
+                //왼쪽에서 현재 x축위치x20만큼 떨어지기
+                star.style.left = `${x*block}px`;
+                //위에서 현재 y축위치x20만큼 떨어지기
+                star.style.top = `${y*block}px`;
+            }
+            print()
+
+            //방향키로 별 이동하기
+            //방향키 아스키코드 이용
+            const [left, up, right, down] = [37, 38, 39, 40]
+            //body전체에 이벤트 적용 - keydown으로 키보드 누르면 실행되게
+            document.body.addEventListener('keydown', (event) => {
+                switch (event.keyCode) {
+                    //왼쪽 방향키 누르면 왼쪽으로 이동
+                    case left:
+                        x -= 1
+                        break
+                    case up:
+                        y -= 1
+                        break
+                    case right: 
+                        x += 1
+                        break
+                    case down: 
+                        y += 1
+                        break
+                }
+                print()
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>⭐</h1>
+</body>
+</html>
