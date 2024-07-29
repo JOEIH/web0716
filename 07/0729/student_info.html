@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () =>{
+            const button = document.querySelector('button')
+
+            button.addEventListener('click', () => {
+                const h1 = document.createElement('h1')
+                const text = document.createElement('p')
+                
+                //innerHTML사용 지양하기
+                h1.innerHTML += '학생의 이름'
+                //innerHTML을 덮어쓰게되므로 따로 추가해주기
+                text.textContent += '학생의 이름은 구구단입니다.'
+                //appendChild 안에는 ''쓰지 않음
+                //appendChild는 한 개, append는 여러 개의 자식 추가 가능
+                document.querySelector('#name').append(h1, text)
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>학생 정보</button>
+    <p id="name"></p>
+</body>
+</html>

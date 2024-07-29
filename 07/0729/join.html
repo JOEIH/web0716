@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            border-style: none;
+            border: solid 0.5px black;
+            width: 50px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const result = Number(prompt('몇 명이 참가하나요?'))
+        
+        //입력된 숫자에 따라 p, input 태그 추가
+        for (let i = 1; i <=result; i++) {
+            const question = document.createElement('p')
+            const input = document.createElement('input')
+            //input에 제시어 입력하면 콘솔창에 입력값을 출력
+            input.addEventListener('keyup', ()=>{
+                console.log(`${i}번째 참가자의 제시어: `, event.target.value)
+            })
+
+            question.textContent = `${i}번째 참가자`
+            input.setAttribute('placeholder', `${i}번째 제시어`)
+            document.body.append(question, input)
+        }
+
+
+    </script>
+</body>
+</html>
